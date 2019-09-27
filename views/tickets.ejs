@@ -1,0 +1,29 @@
+<%include header %>
+  <div class=container>
+    <div class="jumbotron">
+      <div class="container">
+
+        <h1>You are on the tickets page</h1>
+        <p>Choose the tickets you want to purchase</p>
+        
+      </div>
+    </div>
+    
+      <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+        <% tickets.forEach(function(ticket){ %>
+          <div class="col-md-3 col-sm-6">
+              <div class="thumbnail">
+                <h1><%= ticket.name %></h1>
+                <h3><%= ticket.cost %></h3>
+                <div class="caption">
+                  <a class="btn-lg btn-primary" href="/ticketbought/<%= ticket._id %>">Buy now</a>
+                </div>
+              </div>
+            </div>
+        <% }); %>
+      </div>
+    
+
+  </div>
+
+<% include footer %>
